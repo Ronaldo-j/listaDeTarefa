@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="tablink" onclick="openTab(event, 'tasks')">Tarefas</button>
+        <button class="tablink" onclick="openTab(event, 'trash')">Lixeira</button>
+        <button class="tablink" onclick="openTab(event, 'calendar')">Calendário</button>
+        <button class="tablink" onclick="openTab(event, 'settings')">Configurações</button>
+    </div>
+    <div class="container">
+        <h2>Bem-vindo, <span id="userName"></span></h2>
+        <div id="tasks" class="tabcontent">
+            <h3>Lista de Tarefas</h3>
+            <ul id="taskList"></ul>
+            <form id="addTaskForm">
+                <input type="text" id="taskTitle" placeholder="Título da Tarefa" required>
+                <input type="text" id="taskInput" placeholder="Descrição da Tarefa" required>
+                <input type="date" id="taskDate" required>
+                <button class="a" type="submit">Adicionar</button>
+            </form>            
+        </div>
+        <div id="trash" class="tabcontent">
+            <h3>Lixeira</h3>
+            <ul id="trashList"></ul>
+        </div>
+        <div id="calendar" class="tabcontent">
+            <h3>Calendário</h3>
+            <div id="calendarView"></div>
+        </div>
+        <div id="settings" class="tabcontent">
+            <h3>Configurações</h3>
+            <p>Nome: <span id="userNameSettings"></span></p>
+            <p>Email: <input type="email" id="userEmailSettings" required></p>
+            <button class="b" onclick="updateEmail()">Atualizar Email</button>
+            <button class="c" onclick="logout()">Sair</button>
+        </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="tasks.js"></script>
+</body>
+</html>
